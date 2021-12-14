@@ -1,0 +1,256 @@
+node n1 {
+    type router
+    model PC
+    network-config {
+	hostname n1
+	!
+	interface eth0
+	 ip address 10.0.0.20/24
+	!
+    }
+    canvas c1
+    iconcoords {146.0 118.0}
+    labelcoords {146.0 150.0}
+    interface-peer {eth0 n3}
+    custom-config {
+	custom-config-id service:HTTP
+	custom-command HTTP
+	config {
+	dirs=('/etc/apache2', '/var/run/apache2', '/var/log/apache2', '/var/lock/apache2', '/var/www', '/run/lock', )
+	cmdup=('mkdir -p /run/lock', 'mkdir -p /var/log/apache2', 'apache2ctl start', )
+	}
+    }
+    custom-config {
+	custom-config-id service:FTP
+	custom-command FTP
+	config {
+	cmdup=('chmod a-w /var/run/vsftpd/empty', 'chmod a-w /var/ftp', 'vsftpd ./vsftpd.conf', )
+	}
+    }
+    services {DefaultRoute FTP HTTP}
+}
+
+node n2 {
+    type router
+    model PC
+    network-config {
+	hostname n2
+	!
+	interface eth0
+	 ip address 10.0.0.21/24
+	!
+    }
+    canvas c1
+    iconcoords {430.0 118.0}
+    labelcoords {430.0 150.0}
+    interface-peer {eth0 n3}
+    custom-config {
+	custom-config-id service:HTTP
+	custom-command HTTP
+	config {
+	dirs=('/etc/apache2', '/var/run/apache2', '/var/log/apache2', '/var/lock/apache2', '/var/www', '/run/lock', )
+	cmdup=('mkdir -p /run/lock', 'mkdir -p /var/log/apache2', 'apache2ctl start', )
+	}
+    }
+    custom-config {
+	custom-config-id service:FTP
+	custom-command FTP
+	config {
+	cmdup=('chmod a-w /var/run/vsftpd/empty', 'chmod a-w /var/ftp', 'vsftpd ./vsftpd.conf', )
+	}
+    }
+    services {DefaultRoute FTP HTTP}
+}
+
+node n3 {
+    type hub
+    network-config {
+	hostname n3
+	!
+    }
+    canvas c1
+    iconcoords {287.0 217.0}
+    labelcoords {287.0 241.0}
+    interface-peer {e0 n1}
+    interface-peer {e1 n2}
+    interface-peer {e2 n5}
+}
+
+node n4 {
+    type hub
+    network-config {
+	hostname n4
+	!
+    }
+    canvas c1
+    iconcoords {289.0 383.0}
+    labelcoords {289.0 407.0}
+    interface-peer {e0 n5}
+    interface-peer {e1 n6}
+    interface-peer {e2 n7}
+}
+
+node n5 {
+    type lanswitch
+    network-config {
+	hostname n5
+	!
+    }
+    canvas c1
+    iconcoords {287.0 309.0}
+    labelcoords {287.0 333.0}
+    interface-peer {e0 n3}
+    interface-peer {e1 n4}
+    interface-peer {e2 n8}
+}
+
+node n6 {
+    type router
+    model PC
+    network-config {
+	hostname n6
+	!
+	interface eth0
+	 ip address 10.0.0.22/24
+	!
+    }
+    canvas c1
+    iconcoords {139.0 457.0}
+    labelcoords {139.0 489.0}
+    interface-peer {eth0 n4}
+    custom-config {
+	custom-config-id service:HTTP
+	custom-command HTTP
+	config {
+	dirs=('/etc/apache2', '/var/run/apache2', '/var/log/apache2', '/var/lock/apache2', '/var/www', '/run/lock', )
+	cmdup=('mkdir -p /run/lock', 'mkdir -p /var/log/apache2', 'apache2ctl start', )
+	}
+    }
+    custom-config {
+	custom-config-id service:FTP
+	custom-command FTP
+	config {
+	cmdup=('chmod a-w /var/run/vsftpd/empty', 'chmod a-w /var/ftp', 'vsftpd ./vsftpd.conf', )
+	}
+    }
+}
+
+node n7 {
+    type router
+    model PC
+    network-config {
+	hostname n7
+	!
+	interface eth0
+	 ip address 10.0.0.23/24
+	!
+    }
+    canvas c1
+    iconcoords {431.0 455.0}
+    labelcoords {431.0 487.0}
+    interface-peer {eth0 n4}
+    custom-config {
+	custom-config-id service:HTTP
+	custom-command HTTP
+	config {
+	dirs=('/etc/apache2', '/var/run/apache2', '/var/log/apache2', '/var/lock/apache2', '/var/www', '/run/lock', )
+	cmdup=('mkdir -p /run/lock', 'mkdir -p /var/log/apache2', 'apache2ctl start', )
+	}
+    }
+    custom-config {
+	custom-config-id service:FTP
+	custom-command FTP
+	config {
+	cmdup=('chmod a-w /var/run/vsftpd/empty', 'chmod a-w /var/ftp', 'vsftpd ./vsftpd.conf', )
+	}
+    }
+    services {DefaultRoute FTP HTTP}
+}
+
+node n8 {
+    type router
+    model host
+    network-config {
+	hostname n8
+	!
+	interface eth0
+	 ip address 10.0.0.10/24
+	!
+    }
+    canvas c1
+    iconcoords {143.0 310.0}
+    labelcoords {143.0 342.0}
+    interface-peer {eth0 n5}
+    custom-config {
+	custom-config-id service:HTTP
+	custom-command HTTP
+	config {
+	dirs=('/etc/apache2', '/var/run/apache2', '/var/log/apache2', '/var/lock/apache2', '/var/www', '/run/lock', )
+	cmdup=('mkdir -p /run/lock', 'mkdir -p /var/log/apache2', 'apache2ctl start', )
+	}
+    }
+    custom-config {
+	custom-config-id service:FTP
+	custom-command FTP
+	config {
+	cmdup=('chmod a-w /var/run/vsftpd/empty', 'chmod a-w /var/ftp', 'vsftpd ./vsftpd.conf', )
+	}
+    }
+    services {DefaultRoute FTP HTTP SSH}
+}
+
+link l1 {
+    nodes {n1 n3}
+    bandwidth 0
+}
+
+link l2 {
+    nodes {n2 n3}
+    bandwidth 0
+}
+
+link l3 {
+    nodes {n3 n5}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n5 n4}
+    bandwidth 0
+}
+
+link l5 {
+    nodes {n4 n6}
+    bandwidth 0
+}
+
+link l6 {
+    nodes {n4 n7}
+    bandwidth 0
+}
+
+link l7 {
+    nodes {n8 n5}
+    bandwidth 0
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+option global {
+    interface_names no
+    ip_addresses yes
+    ipv6_addresses yes
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+}
+
