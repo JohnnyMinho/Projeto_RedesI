@@ -207,20 +207,20 @@ node n9 {
     network-config {
 	hostname R1
 	!
+	interface eth1
+	 ip address 192.168.0.22/30
+	!
+	interface eth0
+	 ip address 192.168.0.1/30
+	!
 	interface eth2
 	 mac address 00:00:00:00:00:00
 	 ip address 10.0.1.62/26
 	!
-	interface eth1
-	 ip address 192.168.0.1/30
-	!
-	interface eth0
-	 ip address 192.168.22/30
-	!
     }
     canvas c1
-    iconcoords {481.0 217.0}
-    labelcoords {481.0 249.0}
+    iconcoords {485.0 210.0}
+    labelcoords {485.0 242.0}
     interface-peer {eth0 n10}
     interface-peer {eth1 n14}
     interface-peer {eth2 n5}
@@ -232,22 +232,22 @@ node n10 {
     network-config {
 	hostname R2
 	!
+	interface eth1
+	 ip address 192.168.0.5/30
+	!
+	interface eth0
+	 ip address 192.168.0.2/30
+	!
+	interface eth2
+	 ip address 192.168.0.30/30
+	!
 	interface eth3
 	 ip address 10.0.1.190/24
 	!
-	interface eth0
-	 ip address 192.168.0.30/30
-	!
-	interface eth2
-	 ip address 192.168.0.14/30
-	!
-	interface eth1
-	 ip address 192.168.0.4/30
-	!
     }
     canvas c1
-    iconcoords {876.0 221.0}
-    labelcoords {876.0 253.0}
+    iconcoords {853.0 207.0}
+    labelcoords {853.0 239.0}
     interface-peer {eth0 n9}
     interface-peer {eth1 n11}
     interface-peer {eth2 n15}
@@ -269,8 +269,8 @@ node n11 {
 	!
     }
     canvas c1
-    iconcoords {977.0 363.0}
-    labelcoords {977.0 395.0}
+    iconcoords {982.0 363.0}
+    labelcoords {982.0 395.0}
     interface-peer {eth0 n10}
     interface-peer {eth1 n12}
     services {OSPFv2 OSPFv3 zebra DefaultRoute IPForward}
@@ -736,8 +736,8 @@ node n32 {
 	!
     }
     canvas c1
-    iconcoords {1116.0 575.0}
-    labelcoords {1116.0 607.0}
+    iconcoords {1126.0 611.0}
+    labelcoords {1126.0 643.0}
     interface-peer {eth0 n34}
     custom-config {
 	custom-config-id service:HTTP
@@ -1111,10 +1111,10 @@ link l36 {
 annotation a1 {
     iconcoords {10.0 15.0 393.0 348.0}
     type rectangle
-    label {Rede 1}
+    label {Rede A}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     color #C0C0FF
     width 0
     border black
@@ -1125,10 +1125,10 @@ annotation a1 {
 annotation a2 {
     iconcoords {1009.0 14.0 1491.0 350.0}
     type rectangle
-    label {Rede 2}
+    label {Rede B}
     labelcolor black
     fontfamily {Arial}
-    fontsize {12}
+    fontsize 12
     color #c0c049
     width 0
     border black
@@ -1139,7 +1139,7 @@ annotation a2 {
 annotation a3 {
     iconcoords {876.0 549.0 1397.0 851.0}
     type rectangle
-    label {Rede 4}
+    label {Rede D}
     labelcolor black
     fontfamily {Arial}
     fontsize 12
@@ -1153,7 +1153,7 @@ annotation a3 {
 annotation a4 {
     iconcoords {14.0 555.0 413.0 857.0}
     type rectangle
-    label {Rede 3}
+    label {Rede C}
     labelcolor black
     fontfamily {Arial}
     fontsize 12
