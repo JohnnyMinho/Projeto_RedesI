@@ -362,8 +362,8 @@ node n10 {
 	!
     }
     canvas c1
-    iconcoords {866.0 198.0}
-    labelcoords {867.0 227.0}
+    iconcoords {873.0 200.0}
+    labelcoords {874.0 229.0}
     interface-peer {eth0 n9}
     interface-peer {eth1 n11}
     interface-peer {eth2 n15}
@@ -1040,12 +1040,12 @@ node n16 {
 	hostname B1
 	!
 	interface eth0
-	 ip address 10.0.1.20/26
+	 ip address 10.0.1.65/26
 	!
     }
     canvas c1
-    iconcoords {1102.0 58.0}
-    labelcoords {1102.0 90.0}
+    iconcoords {1023.0 56.0}
+    labelcoords {1023.0 88.0}
     interface-peer {eth0 n18}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -1089,12 +1089,12 @@ node n17 {
 	hostname B2
 	!
 	interface eth0
-	 ip address 10.0.1.21/26
+	 ip address 10.0.1.66/26
 	!
     }
     canvas c1
-    iconcoords {1274.0 67.0}
-    labelcoords {1274.0 99.0}
+    iconcoords {1273.0 66.0}
+    labelcoords {1273.0 98.0}
     interface-peer {eth0 n18}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -1152,7 +1152,7 @@ node n21 {
 	hostname B5
 	!
 	interface eth0
-	 ip address 10.0.1.22/26
+	 ip address 10.0.1.130/26
 	!
     }
     canvas c1
@@ -1201,7 +1201,7 @@ node n22 {
 	hostname B4
 	!
 	interface eth0
-	 ip address 10.0.1.23/26
+	 ip address 10.0.1.129/26
 	!
     }
     canvas c1
@@ -1250,7 +1250,7 @@ node n23 {
 	hostname B3
 	!
 	interface eth0
-	 ip address 10.0.1.10/26
+	 ip address 10.0.1.67/26
 	!
     }
     canvas c1
@@ -1328,12 +1328,12 @@ node n19 {
 	hostname D3
 	!
 	interface eth0
-	 ip address 10.0.1.20/29
+	 ip address 10.0.1.230/29
 	!
     }
     canvas c1
-    iconcoords {1177.0 793.0}
-    labelcoords {1177.0 825.0}
+    iconcoords {1179.0 793.0}
+    labelcoords {1179.0 825.0}
     interface-peer {eth0 n34}
     custom-config {
 	custom-config-id service:DefaultRoute
@@ -1377,7 +1377,7 @@ node n20 {
 	hostname D4
 	!
 	interface eth0
-	 ip address 10.0.1.21/27
+	 ip address 10.0.1.227/27
 	!
     }
     canvas c1
@@ -1426,7 +1426,7 @@ node n35 {
 	hostname C2
 	!
 	interface eth0
-	 ip address 10.0.1.10/27
+	 ip address 10.0.1.240/27
 	!
     }
     canvas c1
